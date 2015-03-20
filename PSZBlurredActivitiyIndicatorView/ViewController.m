@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "PSZBlurredActivityIndicatorView.h"
 
 @interface ViewController ()
 

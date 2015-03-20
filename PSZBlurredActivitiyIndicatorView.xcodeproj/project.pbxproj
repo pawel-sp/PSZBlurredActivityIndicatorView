@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55B79AFA1ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B79AF91ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.m */; };
+		55B79AFD1ABC59320020C6A0 /* PSZBlurredArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B79AFC1ABC59320020C6A0 /* PSZBlurredArcLayer.m */; };
 		55E108101ABC5305002B752A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E1080F1ABC5305002B752A /* main.m */; };
 		55E108131ABC5305002B752A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E108121ABC5305002B752A /* AppDelegate.m */; };
 		55E108161ABC5305002B752A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E108151ABC5305002B752A /* ViewController.m */; };
@@ -27,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55B79AF81ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSZBlurredActivityIndicatorView.h; sourceTree = "<group>"; };
+		55B79AF91ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSZBlurredActivityIndicatorView.m; sourceTree = "<group>"; };
+		55B79AFB1ABC59320020C6A0 /* PSZBlurredArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSZBlurredArcLayer.h; sourceTree = "<group>"; };
+		55B79AFC1ABC59320020C6A0 /* PSZBlurredArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSZBlurredArcLayer.m; sourceTree = "<group>"; };
 		55E1080A1ABC5305002B752A /* PSZBlurredActivitiyIndicatorView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSZBlurredActivitiyIndicatorView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E1080E1ABC5305002B752A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55E1080F1ABC5305002B752A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +66,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55B79AF61ABC53B90020C6A0 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				55B79AF81ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.h */,
+				55B79AF91ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.m */,
+				55B79AFB1ABC59320020C6A0 /* PSZBlurredArcLayer.h */,
+				55B79AFC1ABC59320020C6A0 /* PSZBlurredArcLayer.m */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
+		55B79AF71ABC53BF0020C6A0 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				55E108141ABC5305002B752A /* ViewController.h */,
+				55E108151ABC5305002B752A /* ViewController.m */,
+			);
+			name = example;
+			sourceTree = "<group>";
+		};
 		55E108011ABC5305002B752A = {
 			isa = PBXGroup;
 			children = (
@@ -81,13 +107,10 @@
 		55E1080C1ABC5305002B752A /* PSZBlurredActivitiyIndicatorView */ = {
 			isa = PBXGroup;
 			children = (
-				55E108111ABC5305002B752A /* AppDelegate.h */,
-				55E108121ABC5305002B752A /* AppDelegate.m */,
-				55E108141ABC5305002B752A /* ViewController.h */,
-				55E108151ABC5305002B752A /* ViewController.m */,
 				55E108171ABC5305002B752A /* Main.storyboard */,
 				55E1081A1ABC5305002B752A /* Images.xcassets */,
-				55E1081C1ABC5305002B752A /* LaunchScreen.xib */,
+				55B79AF71ABC53BF0020C6A0 /* example */,
+				55B79AF61ABC53B90020C6A0 /* classes */,
 				55E1080D1ABC5305002B752A /* Supporting Files */,
 			);
 			path = PSZBlurredActivitiyIndicatorView;
@@ -96,6 +119,9 @@
 		55E1080D1ABC5305002B752A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				55E1081C1ABC5305002B752A /* LaunchScreen.xib */,
+				55E108111ABC5305002B752A /* AppDelegate.h */,
+				55E108121ABC5305002B752A /* AppDelegate.m */,
 				55E1080E1ABC5305002B752A /* Info.plist */,
 				55E1080F1ABC5305002B752A /* main.m */,
 			);
@@ -219,8 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B79AFD1ABC59320020C6A0 /* PSZBlurredArcLayer.m in Sources */,
 				55E108161ABC5305002B752A /* ViewController.m in Sources */,
 				55E108131ABC5305002B752A /* AppDelegate.m in Sources */,
+				55B79AFA1ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.m in Sources */,
 				55E108101ABC5305002B752A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +440,7 @@
 				55E1082F1ABC5305002B752A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55E108301ABC5305002B752A /* Build configuration list for PBXNativeTarget "PSZBlurredActivitiyIndicatorViewTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +449,7 @@
 				55E108321ABC5305002B752A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
