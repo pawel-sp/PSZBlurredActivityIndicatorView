@@ -10,4 +10,7 @@
 
 @interface PSZBlurredActivityIndicatorView : UIView
 
+- (void)startAnimating;
+- (void)stopAnimation;
+
 @end

@@ -16,6 +16,47 @@
 
 @implementation PSZBlurredArcLayer
 
+#pragma mark - Utilities
+
+- (CGFloat)shadowVerticalOffset {
+    //arc is moved out of the visible rect, to show only it's shadow
+    return self.bounds.size.width;
+}
+
+#pragma mark - Overrides
+
+- (void)display {
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0);
+    
+    CGContextRef ctx     = UIGraphicsGetCurrentContext();
+    CGFloat margin       = M_PI/10;
+    CGFloat endAngle     = [[self presentationLayer] endAngle] + self.anglesOffset + margin;
+    CGFloat startAngle   = [[self presentationLayer] startAngle] + self.anglesOffset - margin;
+    CGRect bounds        = self.bounds;
+    CGPoint arcCenter    = CGPointMake(bounds.size.width/2 + [self shadowVerticalOffset], bounds.size.height/2);
+    CGFloat radius       = bounds.size.width/2 - 2*self.blurRadius;
+    CGPathRef pathRef    = [UIBezierPath bezierPathWithArcCenter:arcCenter radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES].CGPath;
+    CGSize  shadowOffset = CGSizeMake (-[self shadowVerticalOffset], 0);
+
+    CGContextSetShadowWithColor(ctx, shadowOffset, self.blurRadius, self.arcColor.CGColor);
+    CGContextSetLineWidth(ctx, self.arcWidth);
+    CGContextSetStrokeColorWithColor(ctx,[UIColor blackColor].CGColor);
+    CGContextAddPath(ctx, pathRef);
+    CGContextStrokePath(ctx);
+    self.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
+    UIGraphicsEndImageContext();
+}
+
++ (BOOL)needsDisplayForKey:(NSString *)key{
+    if ([@"endAngle" isEqualToString:key]) {
+        return YES;
+    } else if ([@"startAngle" isEqualToString:key]) {
+        return YES;
+    } else {
+        return [super needsDisplayForKey:key];
+    }
+}
+
 #pragma mark - Properties
 
 - (void)setStartAngle:(CGFloat)startAngle {
@@ -41,39 +82,6 @@
 - (void)setArcWidth:(CGFloat)arcWidth {
     _arcWidth = arcWidth;
     [self setNeedsDisplay];
-}
-
-#pragma mark - Utilities
-
-- (CGFloat)arcVerticalOffset {
-    return self.bounds.size.width;
-}
-
-- (void)drawArcInContext:(CGContextRef)ctx {
-    CGSize  shadowOffset = CGSizeMake (-[self arcVerticalOffset], 0);
-    CGPathRef pathRef    = [self arcPath];
-    
-    CGContextSaveGState(ctx);
-    CGContextSetShadowWithColor(ctx, shadowOffset, self.blurRadius, self.arcColor.CGColor);
-    CGContextSetLineWidth(ctx, self.arcWidth);
-    CGContextSetStrokeColorWithColor(ctx,[UIColor blackColor].CGColor);
-    CGContextAddPath(ctx, pathRef);
-    CGContextStrokePath(ctx);
-    CGContextRestoreGState(ctx);
-}
-
-- (CGPathRef)arcPath {
-    CGRect bounds     = self.bounds;
-    CGPoint arcCenter = CGPointMake(bounds.size.width/2 + [self arcVerticalOffset], bounds.size.height/2);
-    CGFloat radius    = self.bounds.size.width/2 - 1.15*self.blurRadius;
-    return [UIBezierPath bezierPathWithArcCenter:arcCenter radius:radius startAngle:self.startAngle endAngle:self.endAngle clockwise:YES].CGPath;
-}
-
-#pragma mark - Overrides
-
-- (void)drawInContext:(CGContextRef)ctx {
-    [super drawInContext:ctx];
-    [self drawArcInContext:ctx];
 }
 
 @end

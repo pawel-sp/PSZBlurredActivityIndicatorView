@@ -10,19 +10,17 @@
 #import "PSZBlurredActivityIndicatorView.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet PSZBlurredActivityIndicatorView *blurredActivityIndicatorView;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)switchAction:(UISwitch *)sender {
+    if (sender.isOn) {
+        [self.blurredActivityIndicatorView startAnimating];
+    } else {
+        [self.blurredActivityIndicatorView stopAnimation];
+    }
 }
 
 @end

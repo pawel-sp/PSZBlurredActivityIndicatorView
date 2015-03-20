@@ -16,5 +16,6 @@
 @property (nonatomic        ) CGFloat blurRadius;
 @property (strong, nonatomic) UIColor *arcColor;
 @property (nonatomic        ) CGFloat arcWidth;
+@property (nonatomic        ) CGFloat anglesOffset;
 
 @end
