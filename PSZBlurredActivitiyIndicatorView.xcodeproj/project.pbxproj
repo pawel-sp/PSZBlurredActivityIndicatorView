@@ -30,12 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5513B5241AC032EB0052ACEC /* CAAnimation+Additionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Additionals.h"; sourceTree = "<group>"; };
-		5513B5251AC032EB0052ACEC /* CAAnimation+Additionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Additionals.m"; sourceTree = "<group>"; };
-		55B79AF81ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSZBlurredActivityIndicatorView.h; sourceTree = "<group>"; };
-		55B79AF91ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSZBlurredActivityIndicatorView.m; sourceTree = "<group>"; };
-		55B79AFB1ABC59320020C6A0 /* PSZBlurredArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSZBlurredArcLayer.h; sourceTree = "<group>"; };
-		55B79AFC1ABC59320020C6A0 /* PSZBlurredArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSZBlurredArcLayer.m; sourceTree = "<group>"; };
+		5513B5241AC032EB0052ACEC /* CAAnimation+Additionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CAAnimation+Additionals.h"; path = "classes/CAAnimation+Additionals.h"; sourceTree = "<group>"; };
+		5513B5251AC032EB0052ACEC /* CAAnimation+Additionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CAAnimation+Additionals.m"; path = "classes/CAAnimation+Additionals.m"; sourceTree = "<group>"; };
+		55B79AF91ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSZBlurredActivityIndicatorView.m; path = classes/PSZBlurredActivityIndicatorView.m; sourceTree = "<group>"; };
+		55B79AFB1ABC59320020C6A0 /* PSZBlurredArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSZBlurredArcLayer.h; path = classes/PSZBlurredArcLayer.h; sourceTree = "<group>"; };
+		55B79AFC1ABC59320020C6A0 /* PSZBlurredArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSZBlurredArcLayer.m; path = classes/PSZBlurredArcLayer.m; sourceTree = "<group>"; };
+		55CD89911AC04C660090F8DA /* PSZBlurredActivityIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PSZBlurredActivityIndicatorView.h; path = classes/PSZBlurredActivityIndicatorView.h; sourceTree = "<group>"; };
 		55E1080A1ABC5305002B752A /* PSZBlurredActivitiyIndicatorView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSZBlurredActivitiyIndicatorView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E1080E1ABC5305002B752A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55E1080F1ABC5305002B752A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		55B79AF61ABC53B90020C6A0 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				55B79AF81ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.h */,
+				55CD89911AC04C660090F8DA /* PSZBlurredActivityIndicatorView.h */,
 				55B79AF91ABC53EA0020C6A0 /* PSZBlurredActivityIndicatorView.m */,
 				55B79AFB1ABC59320020C6A0 /* PSZBlurredArcLayer.h */,
 				55B79AFC1ABC59320020C6A0 /* PSZBlurredArcLayer.m */,
