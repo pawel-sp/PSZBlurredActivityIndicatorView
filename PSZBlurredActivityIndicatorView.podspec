@@ -6,5 +6,5 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "Paweł Sporysz" => "pawel.s@untitledkingdom.co" }
   s.source       = { :git => "https://github.com/pawel-sp/PSZBlurredActivityIndicatorView", :tag => "0.0.1" }
-  s.source_files = "PSZBlurredActivitiyIndicatorView/classes/*.{h,m}"
+  s.source_files = "PSZBlurredActivityIndicatorView/classes/*.{h,m}"
 end

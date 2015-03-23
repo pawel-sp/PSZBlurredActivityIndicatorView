@@ -43,12 +43,12 @@
 		55DB5ED01AC0552800C6D41F /* PSZBlurredActivityIndicatorViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSZBlurredActivityIndicatorViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DB5ED51AC0552800C6D41F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55DB5ED61AC0552800C6D41F /* PSZBlurredActivityIndicatorViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSZBlurredActivityIndicatorViewTests.m; sourceTree = "<group>"; };
-		55DB5EE21AC0555700C6D41F /* CAAnimation+Additionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Additionals.h"; sourceTree = "<group>"; };
-		55DB5EE31AC0555700C6D41F /* CAAnimation+Additionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Additionals.m"; sourceTree = "<group>"; };
-		55DB5EE41AC0555700C6D41F /* PSZBlurredActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSZBlurredActivityIndicatorView.h; sourceTree = "<group>"; };
-		55DB5EE51AC0555700C6D41F /* PSZBlurredActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSZBlurredActivityIndicatorView.m; sourceTree = "<group>"; };
-		55DB5EE61AC0555700C6D41F /* PSZBlurredArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSZBlurredArcLayer.h; sourceTree = "<group>"; };
-		55DB5EE71AC0555700C6D41F /* PSZBlurredArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSZBlurredArcLayer.m; sourceTree = "<group>"; };
+		55DB5EE21AC0555700C6D41F /* CAAnimation+Additionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CAAnimation+Additionals.h"; path = "classes/CAAnimation+Additionals.h"; sourceTree = "<group>"; };
+		55DB5EE31AC0555700C6D41F /* CAAnimation+Additionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CAAnimation+Additionals.m"; path = "classes/CAAnimation+Additionals.m"; sourceTree = "<group>"; };
+		55DB5EE41AC0555700C6D41F /* PSZBlurredActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSZBlurredActivityIndicatorView.h; path = classes/PSZBlurredActivityIndicatorView.h; sourceTree = "<group>"; };
+		55DB5EE51AC0555700C6D41F /* PSZBlurredActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSZBlurredActivityIndicatorView.m; path = classes/PSZBlurredActivityIndicatorView.m; sourceTree = "<group>"; };
+		55DB5EE61AC0555700C6D41F /* PSZBlurredArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSZBlurredArcLayer.h; path = classes/PSZBlurredArcLayer.h; sourceTree = "<group>"; };
+		55DB5EE71AC0555700C6D41F /* PSZBlurredArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSZBlurredArcLayer.m; path = classes/PSZBlurredArcLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,6 +448,7 @@
 				55DB5EDC1AC0552800C6D41F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55DB5EDD1AC0552800C6D41F /* Build configuration list for PBXNativeTarget "PSZBlurredActivityIndicatorViewTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +457,7 @@
 				55DB5EDF1AC0552800C6D41F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
