@@ -21,7 +21,9 @@
     if (sender.isOn) {
         [self.blurredActivityIndicatorView startAnimating];
     } else {
-        [self.blurredActivityIndicatorView stopAnimation];
+        [self.blurredActivityIndicatorView stopAnimationWithCompletionBlock:^{
+            NSLog(@"OK");
+        }];
     }
 }
 

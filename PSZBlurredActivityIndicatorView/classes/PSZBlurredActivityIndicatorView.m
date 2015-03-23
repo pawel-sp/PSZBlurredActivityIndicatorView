@@ -16,6 +16,7 @@ static NSString * const blurredActivityIndicatorViewArcOpacityAnimationKey = @"b
 @interface PSZBlurredActivityIndicatorView()
 {
     BOOL _animationDidStart;
+    PSZBlurredActivityIndicatorViewAnimationCompletionBlock _completionBlock;
 }
 @property (strong, nonatomic) PSZBlurredArcLayer *arcLayer;
 @end
@@ -115,11 +116,19 @@ static NSString * const blurredActivityIndicatorViewArcOpacityAnimationKey = @"b
     [self setAnimationActive:NO];
 }
 
+- (void)stopAnimationWithCompletionBlock:(PSZBlurredActivityIndicatorViewAnimationCompletionBlock)block {
+    _completionBlock = block;
+    [self stopAnimation];
+}
+
 #pragma mark - CAAnimationDelegate
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     if (!_animationDidStart) {
         [self.arcLayer removeAllAnimations];
+        if (_completionBlock) {
+            _completionBlock();
+        }
     }
 }
 

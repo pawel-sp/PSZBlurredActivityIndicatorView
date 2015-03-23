@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^PSZBlurredActivityIndicatorViewAnimationCompletionBlock)();
+
 @class PSZBlurredArcLayer;
 
 @interface PSZBlurredActivityIndicatorView : UIView
@@ -39,5 +41,6 @@
 
 - (void)startAnimating;
 - (void)stopAnimation;
+- (void)stopAnimationWithCompletionBlock:(PSZBlurredActivityIndicatorViewAnimationCompletionBlock)block;
 
 @end
