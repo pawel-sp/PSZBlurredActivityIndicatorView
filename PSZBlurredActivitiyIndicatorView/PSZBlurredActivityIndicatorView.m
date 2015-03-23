@@ -8,6 +8,10 @@
 
 #import "PSZBlurredActivityIndicatorView.h"
 #import "PSZBlurredArcLayer.h"
+#import "CAAnimation+Additionals.h"
+
+static NSString * const blurredActivityIndicatorViewArcAnglesAnimationKey  = @"blurredActivityIndicatorViewArcAnglesAnimationKey";
+static NSString * const blurredActivityIndicatorViewArcOpacityAnimationKey = @"blurredActivityIndicatorViewArcOpacityAnimationKey";
 
 @interface PSZBlurredActivityIndicatorView()
 {
@@ -27,10 +31,39 @@
     return _arcLayer;
 }
 
+- (void)setArcColor:(UIColor *)arcColor {
+    self.arcLayer.arcColor = arcColor;
+}
+
+- (UIColor *)arcColor {
+    return self.arcLayer.arcColor;
+}
+
+- (void)setArcWidth:(CGFloat)arcWidth {
+    self.arcLayer.arcWidth = arcWidth;
+}
+
+- (CGFloat)arcWidth {
+    return self.arcLayer.arcWidth;
+}
+
+- (void)setArcBlurRadius:(CGFloat)arcBlurRadius {
+    self.arcLayer.blurRadius = arcBlurRadius;
+}
+
+- (CGFloat)arcBlurRadius {
+    return self.arcLayer.blurRadius;
+}
+
 #pragma mark - Setup
 
 - (void)setup {
-    self.opaque = NO;
+    self.opaque                   = NO;
+    self.arcAnimationDuration     = 3;
+    self.opacityAnimationDuration = 0.5;
+    self.arcColor                 = [UIColor blackColor];
+    self.arcWidth                 = 5.0f;
+    self.arcBlurRadius            = 5.0f;
 }
 
 #pragma mark - Overrides
@@ -41,68 +74,35 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    self.arcLayer.frame               = rect;
-    self.arcLayer.arcColor            = [UIColor whiteColor];
-    self.arcLayer.arcWidth            = 35;
-    self.arcLayer.blurRadius          = 25;
-    self.arcLayer.anglesOffset        = -M_PI_2;
-    self.arcLayer.opacity = 0;
+    self.arcLayer.frame        = rect;
+    self.arcLayer.anglesOffset = -M_PI_2;
+    self.arcLayer.opacity      = 0;
     [self.layer addSublayer:self.arcLayer];
 }
 
 #pragma mark - Animations
 
-- (void)startAnimating {
-    _animationDidStart = YES;
-    NSTimeInterval duration = 3;
-    
-//    CABasicAnimation *startAngleAnimation  = [CABasicAnimation animationWithKeyPath:@"startAngle"];
-//    [startAngleAnimation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-//    [startAngleAnimation setDuration:duration];
-//    [startAngleAnimation setFromValue:[NSNumber numberWithFloat:0]];
-//    [startAngleAnimation setToValue:[NSNumber numberWithFloat:M_PI *3]]; // 270
-//    //[startAngleAnimation setAutoreverses:YES];
-//    [startAngleAnimation setRemovedOnCompletion:NO];
-//    
-    CAKeyframeAnimation *startAngleKeyFrameAnimation = [CAKeyframeAnimation animationWithKeyPath:@"startAngle"];
-    startAngleKeyFrameAnimation.duration = duration;
-    startAngleKeyFrameAnimation.values = @[@0,@(M_PI + M_PI_2),@(M_PI*4)];
-    startAngleKeyFrameAnimation.keyTimes = @[@0,@0.5,@1];
-    startAngleKeyFrameAnimation.additive = YES;
-    
-    CAKeyframeAnimation *endAngleKeyFrameAnimation = [CAKeyframeAnimation animationWithKeyPath:@"endAngle"];
-    endAngleKeyFrameAnimation.duration = duration;
-    endAngleKeyFrameAnimation.values = @[@0,@(M_PI * 3),@(M_PI*4)];
-    endAngleKeyFrameAnimation.keyTimes = @[@0,@0.5,@1];
-    endAngleKeyFrameAnimation.additive = YES;
-    
-    
-    CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
-    [animationGroup setDuration:duration];
-    //[animationGroup setBeginTime:CACurrentMediaTime()];
-    [animationGroup setRepeatCount:HUGE_VAL];
-    [animationGroup setAnimations:[NSArray arrayWithObjects:startAngleKeyFrameAnimation,endAngleKeyFrameAnimation, nil]];
-    [self.arcLayer addAnimation:animationGroup forKey:@"arcAnimationKey"];
-    
+- (void)setAnimationActive:(BOOL)active {
+    _animationDidStart = active;
+    if (active) {
+        [self.arcLayer addAnimation:[CAAnimation arcAnimationForDuration:self.arcAnimationDuration] forKey:blurredActivityIndicatorViewArcAnglesAnimationKey];
+        [self.arcLayer addAnimation:[CAAnimation opacityAnimationForLayer:self.arcLayer withDuration:self.opacityAnimationDuration fromValue:self.arcLayer.opacity toValue:1] forKey:blurredActivityIndicatorViewArcOpacityAnimationKey];
+    } else {
+        CAAnimation *opacityAnimation = [CAAnimation opacityAnimationForLayer:self.arcLayer withDuration:self.opacityAnimationDuration fromValue:self.arcLayer.opacity toValue:0];
+        opacityAnimation.delegate     = self;
+        [self.arcLayer addAnimation:opacityAnimation forKey:blurredActivityIndicatorViewArcOpacityAnimationKey];
+    }
+}
 
-    CABasicAnimation *alphaAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    alphaAnimation.fromValue = @(self.arcLayer.opacity);
-    self.arcLayer.opacity = 1;
-    alphaAnimation.toValue = @(self.arcLayer.opacity);
-    alphaAnimation.duration = 0.5;
-    [self.arcLayer addAnimation:alphaAnimation forKey:@"alphaAnimationKey"];
+- (void)startAnimating {
+    [self setAnimationActive:YES];
 }
 
 - (void)stopAnimation {
-    _animationDidStart = NO;
-    CABasicAnimation *alphaAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    alphaAnimation.fromValue = @(self.arcLayer.opacity);
-    self.arcLayer.opacity = 0;
-    alphaAnimation.toValue = @(self.arcLayer.opacity);
-    alphaAnimation.duration = 0.5;
-    alphaAnimation.delegate = self;
-    [self.arcLayer addAnimation:alphaAnimation forKey:@"alphaAnimationKey"];
+    [self setAnimationActive:NO];
 }
+
+#pragma mark - CAAnimationDelegate
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     if (!_animationDidStart) {

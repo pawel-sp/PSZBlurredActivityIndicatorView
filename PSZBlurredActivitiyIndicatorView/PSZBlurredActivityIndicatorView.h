@@ -8,7 +8,34 @@
 
 #import <UIKit/UIKit.h>
 
+@class PSZBlurredArcLayer;
+
 @interface PSZBlurredActivityIndicatorView : UIView
+
+/**
+ *  Default value = 3.
+ */
+@property (nonatomic) NSTimeInterval arcAnimationDuration;
+
+/**
+ *  Default value = 0.5.
+ */
+@property (nonatomic) NSTimeInterval opacityAnimationDuration;
+
+/**
+ *  Default value = UIColor.black.
+ */
+@property (strong, nonatomic) UIColor *arcColor;
+
+/**
+ *  Default value = 5.0f.
+ */
+@property (nonatomic) CGFloat arcWidth;
+
+/**
+ *  Default value = 5.0f.
+ */
+@property (nonatomic) CGFloat arcBlurRadius;
 
 - (void)startAnimating;
 - (void)stopAnimation;
