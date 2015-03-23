@@ -64,6 +64,10 @@ static NSString * const blurredActivityIndicatorViewArcOpacityAnimationKey = @"b
     self.arcColor                 = [UIColor blackColor];
     self.arcWidth                 = 5.0f;
     self.arcBlurRadius            = 5.0f;
+
+    self.arcLayer.anglesOffset    = -M_PI_2;
+    self.arcLayer.opacity         = 0;
+
 }
 
 #pragma mark - Init
@@ -86,9 +90,7 @@ static NSString * const blurredActivityIndicatorViewArcOpacityAnimationKey = @"b
 
 - (void)drawRect:(CGRect)rect {
     self.arcLayer.frame        = rect;
-    self.arcLayer.anglesOffset = -M_PI_2;
-    self.arcLayer.opacity      = 0;
-    [self.layer addSublayer:self.arcLayer];
+        [self.layer addSublayer:self.arcLayer];
 }
 
 #pragma mark - Animations
@@ -97,9 +99,9 @@ static NSString * const blurredActivityIndicatorViewArcOpacityAnimationKey = @"b
     _animationDidStart = active;
     if (active) {
         [self.arcLayer addAnimation:[CAAnimation arcAnimationForDuration:self.arcAnimationDuration] forKey:blurredActivityIndicatorViewArcAnglesAnimationKey];
-        [self.arcLayer addAnimation:[CAAnimation opacityAnimationForLayer:self.arcLayer withDuration:self.opacityAnimationDuration fromValue:self.arcLayer.opacity toValue:1] forKey:blurredActivityIndicatorViewArcOpacityAnimationKey];
+        [self.arcLayer addAnimation:[CAAnimation opacityAnimationForLayer:self.arcLayer withDuration:self.opacityAnimationDuration fromValue:0 toValue:1] forKey:blurredActivityIndicatorViewArcOpacityAnimationKey];
     } else {
-        CAAnimation *opacityAnimation = [CAAnimation opacityAnimationForLayer:self.arcLayer withDuration:self.opacityAnimationDuration fromValue:self.arcLayer.opacity toValue:0];
+        CAAnimation *opacityAnimation = [CAAnimation opacityAnimationForLayer:self.arcLayer withDuration:self.opacityAnimationDuration fromValue:1 toValue:0];
         opacityAnimation.delegate     = self;
         [self.arcLayer addAnimation:opacityAnimation forKey:blurredActivityIndicatorViewArcOpacityAnimationKey];
     }
