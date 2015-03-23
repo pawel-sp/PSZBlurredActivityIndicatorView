@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PSZBlurredActivitiyIndicatorView.xcscheme</key>
+		<key>PSZBlurredActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>55E108091ABC5305002B752A</key>
+		<key>55DB5EB61AC0552800C6D41F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55E108221ABC5305002B752A</key>
+		<key>55DB5ECF1AC0552800C6D41F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

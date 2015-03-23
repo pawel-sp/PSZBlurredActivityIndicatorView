@@ -1,19 +1,19 @@
 //
-//  PSZBlurredActivitiyIndicatorViewTests.m
-//  PSZBlurredActivitiyIndicatorViewTests
+//  PSZBlurredActivityIndicatorViewTests.m
+//  PSZBlurredActivityIndicatorViewTests
 //
-//  Created by Paweł Sporysz on 20.03.2015.
+//  Created by Paweł Sporysz on 23.03.2015.
 //  Copyright (c) 2015 Paweł Sporysz. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface PSZBlurredActivitiyIndicatorViewTests : XCTestCase
+@interface PSZBlurredActivityIndicatorViewTests : XCTestCase
 
 @end
 
-@implementation PSZBlurredActivitiyIndicatorViewTests
+@implementation PSZBlurredActivityIndicatorViewTests
 
 - (void)setUp {
     [super setUp];

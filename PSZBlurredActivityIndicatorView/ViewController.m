@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  PSZBlurredActivitiyIndicatorView
+//  PSZBlurredActivityIndicatorView
 //
-//  Created by Paweł Sporysz on 20.03.2015.
+//  Created by Paweł Sporysz on 23.03.2015.
 //  Copyright (c) 2015 Paweł Sporysz. All rights reserved.
 //
 
@@ -19,9 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.blurredActivityIndicatorView.arcColor = [UIColor redColor];
-//    self.blurredActivityIndicatorView.arcWidth = 20.0f;
-//    self.blurredActivityIndicatorView.arcBlurRadius = 20.0f;
+    //    self.blurredActivityIndicatorView.arcColor = [UIColor redColor];
+    //    self.blurredActivityIndicatorView.arcWidth = 20.0f;
+    //    self.blurredActivityIndicatorView.arcBlurRadius = 20.0f;
 }
 
 #pragma mark - Actions

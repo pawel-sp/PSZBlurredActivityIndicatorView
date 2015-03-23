@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55E108091ABC5305002B752A"
-               BuildableName = "PSZBlurredActivitiyIndicatorView.app"
-               BlueprintName = "PSZBlurredActivitiyIndicatorView"
-               ReferencedContainer = "container:PSZBlurredActivitiyIndicatorView.xcodeproj">
+               BlueprintIdentifier = "55DB5EB61AC0552800C6D41F"
+               BuildableName = "PSZBlurredActivityIndicatorView.app"
+               BlueprintName = "PSZBlurredActivityIndicatorView"
+               ReferencedContainer = "container:PSZBlurredActivityIndicatorView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55E108221ABC5305002B752A"
-               BuildableName = "PSZBlurredActivitiyIndicatorViewTests.xctest"
-               BlueprintName = "PSZBlurredActivitiyIndicatorViewTests"
-               ReferencedContainer = "container:PSZBlurredActivitiyIndicatorView.xcodeproj">
+               BlueprintIdentifier = "55DB5ECF1AC0552800C6D41F"
+               BuildableName = "PSZBlurredActivityIndicatorViewTests.xctest"
+               BlueprintName = "PSZBlurredActivityIndicatorViewTests"
+               ReferencedContainer = "container:PSZBlurredActivityIndicatorView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55E108221ABC5305002B752A"
-               BuildableName = "PSZBlurredActivitiyIndicatorViewTests.xctest"
-               BlueprintName = "PSZBlurredActivitiyIndicatorViewTests"
-               ReferencedContainer = "container:PSZBlurredActivitiyIndicatorView.xcodeproj">
+               BlueprintIdentifier = "55DB5ECF1AC0552800C6D41F"
+               BuildableName = "PSZBlurredActivityIndicatorViewTests.xctest"
+               BlueprintName = "PSZBlurredActivityIndicatorViewTests"
+               ReferencedContainer = "container:PSZBlurredActivityIndicatorView.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "55E108091ABC5305002B752A"
-            BuildableName = "PSZBlurredActivitiyIndicatorView.app"
-            BlueprintName = "PSZBlurredActivitiyIndicatorView"
-            ReferencedContainer = "container:PSZBlurredActivitiyIndicatorView.xcodeproj">
+            BlueprintIdentifier = "55DB5EB61AC0552800C6D41F"
+            BuildableName = "PSZBlurredActivityIndicatorView.app"
+            BlueprintName = "PSZBlurredActivityIndicatorView"
+            ReferencedContainer = "container:PSZBlurredActivityIndicatorView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "55E108091ABC5305002B752A"
-            BuildableName = "PSZBlurredActivitiyIndicatorView.app"
-            BlueprintName = "PSZBlurredActivitiyIndicatorView"
-            ReferencedContainer = "container:PSZBlurredActivitiyIndicatorView.xcodeproj">
+            BlueprintIdentifier = "55DB5EB61AC0552800C6D41F"
+            BuildableName = "PSZBlurredActivityIndicatorView.app"
+            BlueprintName = "PSZBlurredActivityIndicatorView"
+            ReferencedContainer = "container:PSZBlurredActivityIndicatorView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "55E108091ABC5305002B752A"
-            BuildableName = "PSZBlurredActivitiyIndicatorView.app"
-            BlueprintName = "PSZBlurredActivitiyIndicatorView"
-            ReferencedContainer = "container:PSZBlurredActivitiyIndicatorView.xcodeproj">
+            BlueprintIdentifier = "55DB5EB61AC0552800C6D41F"
+            BuildableName = "PSZBlurredActivityIndicatorView.app"
+            BlueprintName = "PSZBlurredActivityIndicatorView"
+            ReferencedContainer = "container:PSZBlurredActivityIndicatorView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

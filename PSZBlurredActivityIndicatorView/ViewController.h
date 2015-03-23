@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  PSZBlurredActivitiyIndicatorView
+//  PSZBlurredActivityIndicatorView
 //
-//  Created by Paweł Sporysz on 20.03.2015.
+//  Created by Paweł Sporysz on 23.03.2015.
 //  Copyright (c) 2015 Paweł Sporysz. All rights reserved.
 //
 
