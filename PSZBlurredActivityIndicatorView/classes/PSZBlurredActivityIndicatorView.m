@@ -66,12 +66,23 @@ static NSString * const blurredActivityIndicatorViewArcOpacityAnimationKey = @"b
     self.arcBlurRadius            = 5.0f;
 }
 
-#pragma mark - Overrides
+#pragma mark - Init
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    [self setup];
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setup];
+    }
+    return self;
 }
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self setup];
+    }
+    return self;
+}
+
+#pragma mark - Overrides
 
 - (void)drawRect:(CGRect)rect {
     self.arcLayer.frame        = rect;
