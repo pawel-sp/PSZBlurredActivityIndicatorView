@@ -97,6 +97,9 @@ static NSString * const blurredActivityIndicatorViewArcOpacityAnimationKey = @"b
 #pragma mark - Animations
 
 - (void)setAnimationActive:(BOOL)active {
+    if (_animationDidStart == active) {
+        return;
+    }
     _animationDidStart = active;
     if (active) {
         [self.arcLayer addAnimation:[CAAnimation arcAnimationForDuration:self.arcAnimationDuration] forKey:blurredActivityIndicatorViewArcAnglesAnimationKey];
